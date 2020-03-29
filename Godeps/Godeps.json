@@ -1,0 +1,19 @@
+{
+	"ImportPath": "covid-19API",
+	"GoVersion": "go1.13",
+	"GodepVersion": "v80",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Rev": "9edf288989ea657410a01127d101a08f9236f358"
+		},
+		{
+			"ImportPath": "github.com/rs/cors",
+			"Comment": "v1.7.0-8-g6befa20",
+			"Rev": "6befa2091eb6e2078ea8e093111ef6752d500449"
+		}
+	]
+}
