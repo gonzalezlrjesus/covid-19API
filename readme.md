@@ -2,40 +2,57 @@
 
 Es una RESTFUL API por el cual se puede tener acceso a una serie de casos diarios (recuperados, muertos, confirmados) por paises.
 
-#### endpoints Version 1
+## Endpoints Version 1
 
-##### /casos-confirmados
-Peticion:
+### /casos-confirmados
+
+**Peticion:** 
+```json
 GET https://covid-19-api-go.herokuapp.com/v1/casos-confirmados
+```
 
-Curl:
+**Curl:**
+```sh
 curl -X GET "https://covid-19-api-go.herokuapp.com/v1/casos-confirmados"
+```
+**Navegador:**
 
-Navegador:
 [https://covid-19-api-go.herokuapp.com/v1/casos-confirmados](https://covid-19-api-go.herokuapp.com/v1/casos-confirmados)
 
-##### /casos-muertos
-Peticion:
+### /casos-muertos
+
+**Peticion:** 
+```json
 GET https://covid-19-api-go.herokuapp.com/v1/casos-muertos
+```
 
-Curl:
+**Curl:**
+```sh
 curl -X GET "https://covid-19-api-go.herokuapp.com/v1/casos-muertos"
+```
 
-Navegador:
+**Navegador:** 
+
 [https://covid-19-api-go.herokuapp.com/v1/casos-muertos](https://covid-19-api-go.herokuapp.com/v1/casos-muertos)
 
-##### /casos-recuperados
-Peticion:
+### /casos-recuperados
+**Peticion:** 
+```json
 GET https://covid-19-api-go.herokuapp.com/v1/casos-recuperados
+```
 
-Curl:
+**Curl:**
+```sh
 curl -X GET "https://covid-19-api-go.herokuapp.com/v1/casos-recuperados"
+```
 
-Navegador:
+**Navegador:** 
+
 [https://covid-19-api-go.herokuapp.com/v1/casos-recuperados](https://covid-19-api-go.herokuapp.com/v1/casos-recuperados)
 
 
-##### Ejemplo. Si desea utilizar el API en su proyecto:
+##### EJEMPLO. Si desea utilizar la API en su proyecto:
+
 ```javascript
 fetch('https://covid-19-api-go.herokuapp.com/v1/casos-recuperados')
 .then(response => response.json())
@@ -46,7 +63,8 @@ fetch('https://covid-19-api-go.herokuapp.com/v1/casos-recuperados')
     console.log(Venezuela);
 })
 ```
-```console
+
+```json
 Province/State: ""
 Country/Region: "Venezuela"
 Lat: "6.4238"
