@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// GetCasosMuertos depending on query
+// GetCasosMuertos encargada de devolver en formato json los casos muertos hasta la fecha.
 var GetCasosMuertos = func(w http.ResponseWriter, r *http.Request) {
 	var errorCasos error
 

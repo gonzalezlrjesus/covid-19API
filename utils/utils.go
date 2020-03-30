@@ -13,20 +13,18 @@ import (
 	"time"
 )
 
-// Message function wrap message to users
+// Message funcion que agrupa los mensajes
 func Message(message string) map[string]interface{} {
 	return map[string]interface{}{"message": message}
 }
 
-// Respond function to responde request
+// Respond funcion para responder la solicitud
 func Respond(w http.ResponseWriter, data map[string]interface{}, status uint) {
 	w.Header().Add("Content-Type", "application/json")
-
-	w.WriteHeader(http.StatusOK)
-
 	json.NewEncoder(w).Encode(data)
 }
 
+// downloadFile funcion encargada de descargar los archivos con la data de los Casos
 func downloadFile(filePath string) (string, error) {
 	response, error := http.Get(filePath)
 	if error != nil {
@@ -53,6 +51,7 @@ func downloadFile(filePath string) (string, error) {
 	return path.Base(response.Request.URL.String()), nil
 }
 
+// readFile encargada de leer los archivos almacenados en el disco duro
 func readFile(filePath string) (*[][]string, error) {
 	csvFile, err := os.Open(filePath)
 	if err != nil {
@@ -69,6 +68,8 @@ func readFile(filePath string) (*[][]string, error) {
 	return &records, err
 }
 
+// parseCSVFileToJSON parsea la variable que leyo el archivo formato csv y lo
+// transforma de acuerdo a las estructuras en un formato JSON
 func parseCSVFileToJSON(paises *[]modelos.Pais, records *[][]string) {
 	var dias []modelos.Dia
 	for indexFilas := 1; indexFilas < len(*records); indexFilas++ {

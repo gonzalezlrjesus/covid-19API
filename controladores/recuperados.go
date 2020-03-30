@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// GetCasosRecuperados depending on query
+// GetCasosRecuperados encargada de devolver en formato json los casos recuperados hasta la fecha.
 var GetCasosRecuperados = func(w http.ResponseWriter, r *http.Request) {
 	var errorCasos error
 	switch {

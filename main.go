@@ -6,22 +6,21 @@ import (
 	"net/http"
 	"os"
 
-	// Gorm Postgres dialects
 	"github.com/rs/cors"
 )
 
 func main() {
 
-	// Routes
+	// Rutas
 	routes := rutas.Routes()
 
-	// Server port reading
+	// Server lectura del puerto
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8000" //localhost
 	}
 
-	// CORS configuration
+	// CORS Configuracion
 	c := cors.New(cors.Options{
 		AllowedOrigins:   []string{"http://localhost:4200", "*", "http://localhost:3000"},
 		AllowCredentials: true,

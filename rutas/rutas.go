@@ -6,7 +6,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-// Routes all routes
+// Routes Todas las rutas que va a disponer en la API
 func Routes() *mux.Router {
 	router := mux.NewRouter()
 

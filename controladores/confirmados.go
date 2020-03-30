@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// GetCasosConfirmados depending on query
+// GetCasosConfirmados encargada de devolver en formato json los casos confirmados hasta la fecha.
 var GetCasosConfirmados = func(w http.ResponseWriter, r *http.Request) {
 	var errorCasos error
 	switch {
