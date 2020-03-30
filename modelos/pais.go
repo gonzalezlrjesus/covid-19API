@@ -14,5 +14,20 @@ type Pais struct {
 	Dias             []Dia
 }
 
-// PaisesCasosMuertos variable
-var PaisesCasosMuertos []Pais
+var (
+	// PaisesCasosMuertos variable
+	PaisesCasosMuertos []Pais
+	// PaisesCasosConfirmados variable
+	PaisesCasosConfirmados []Pais
+	// PaisesCasosRecuperados variable
+	PaisesCasosRecuperados []Pais
+)
+
+var (
+	// URLCovid19Deaths variable
+	URLCovid19Deaths = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv"
+	// URLCovid19Recovered variable
+	URLCovid19Recovered = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv"
+	// URLCovid19Confirmed variable
+	URLCovid19Confirmed = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
+)

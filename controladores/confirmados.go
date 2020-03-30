@@ -7,26 +7,23 @@ import (
 	"time"
 )
 
-var urlCovid19Confirmed = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
-
-var paisesCasosConfirmados []modelos.Pais
-
 // GetCasosConfirmados depending on query
 var GetCasosConfirmados = func(w http.ResponseWriter, r *http.Request) {
-	switch { // missing expression means "true"
-	case len(paisesCasosConfirmados) == 0 || !(paisesCasosConfirmados[0].ActualizacionDia.Before(time.Now().UTC())):
-		paisesCasosConfirmados, error := utils.UpdateVariable(urlCovid19Confirmed, paisesCasosConfirmados)
-		if error != nil {
+	var errorCasos error
+	switch {
+	case len(modelos.PaisesCasosConfirmados) == 0 || !(modelos.PaisesCasosConfirmados[0].ActualizacionDia.Before(time.Now().UTC())):
+		modelos.PaisesCasosConfirmados, errorCasos = utils.UpdateVariable(modelos.URLCovid19Confirmed, modelos.PaisesCasosConfirmados)
+		if errorCasos != nil {
 			response := utils.Message("Internal Server Error!")
 			utils.Respond(w, response, 500)
 			return
 		}
 		response := utils.Message("Casos Confirmados")
-		response["paises"] = paisesCasosConfirmados
+		response["paises"] = modelos.PaisesCasosConfirmados
 		utils.Respond(w, response, 200)
 	default:
 		response := utils.Message("Casos Default Confirmados")
-		response["paises"] = paisesCasosConfirmados
+		response["paises"] = modelos.PaisesCasosConfirmados
 		utils.Respond(w, response, 200)
 
 	}
