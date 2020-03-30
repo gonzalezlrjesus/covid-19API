@@ -16,8 +16,7 @@ var GetCasosMuertos = func(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Valor total:", modelos.PaisesCasosMuertos)
 	fmt.Println("len(modelos.PaisesCasosMuertos):", len(modelos.PaisesCasosMuertos))
 
-	switch { // missing expression means "true"
-
+	switch {
 	case len(modelos.PaisesCasosMuertos) == 0 || !(modelos.PaisesCasosMuertos[0].ActualizacionDia.Before(time.Now().UTC())):
 
 		modelos.PaisesCasosMuertos, errorCasos = utils.UpdateVariable(urlCovid19Deaths, modelos.PaisesCasosMuertos)
