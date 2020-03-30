@@ -13,3 +13,6 @@ type Pais struct {
 	ActualizacionDia time.Time `json:"actualizacion_dia"`
 	Dias             []Dia
 }
+
+// PaisesCasosMuertos variable
+var PaisesCasosMuertos []Pais
