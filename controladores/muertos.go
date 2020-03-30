@@ -16,7 +16,7 @@ var paisesCasosMuertos []modelos.Pais
 var GetCasosMuertos = func(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Valor total:", paisesCasosMuertos)
 	fmt.Println("len(paisesCasosMuertos):", len(paisesCasosMuertos))
-	fmt.Println("paisesCasosMuertos[0].ActualizacionDia.Before(time.Now().UTC())", paisesCasosMuertos[0].ActualizacionDia.Before(time.Now().UTC()))
+
 	switch { // missing expression means "true"
 
 	case len(paisesCasosMuertos) == 0 || !(paisesCasosMuertos[0].ActualizacionDia.Before(time.Now().UTC())):
