@@ -3,6 +3,7 @@ package controladores
 import (
 	"covid-19API/modelos"
 	"covid-19API/utils"
+	"fmt"
 	"net/http"
 	"time"
 )
@@ -13,7 +14,11 @@ var paisesCasosMuertos []modelos.Pais
 
 // GetCasosMuertos depending on query
 var GetCasosMuertos = func(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Valor total:", paisesCasosMuertos)
+	fmt.Println("len(paisesCasosMuertos):", len(paisesCasosMuertos))
+	fmt.Println("paisesCasosMuertos[0].ActualizacionDia.Before(time.Now().UTC())", paisesCasosMuertos[0].ActualizacionDia.Before(time.Now().UTC()))
 	switch { // missing expression means "true"
+
 	case len(paisesCasosMuertos) == 0 || !(paisesCasosMuertos[0].ActualizacionDia.Before(time.Now().UTC())):
 		paisesCasosMuertos, error := utils.UpdateVariable(urlCovid19Deaths, paisesCasosMuertos)
 		if error != nil {
