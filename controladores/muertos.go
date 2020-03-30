@@ -24,7 +24,7 @@ var GetCasosMuertos = func(w http.ResponseWriter, r *http.Request) {
 		response["paises"] = modelos.PaisesCasosMuertos
 		utils.Respond(w, response, 200)
 	default:
-		response := utils.Message("Casos Default Muertos")
+		response := utils.Message("Casos Muertos")
 		response["paises"] = modelos.PaisesCasosMuertos
 		utils.Respond(w, response, 200)
 	}

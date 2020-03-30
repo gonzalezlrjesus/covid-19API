@@ -22,7 +22,7 @@ var GetCasosRecuperados = func(w http.ResponseWriter, r *http.Request) {
 		response["paises"] = modelos.PaisesCasosRecuperados
 		utils.Respond(w, response, 200)
 	default:
-		response := utils.Message("Casos Default Recuperados")
+		response := utils.Message("Casos Recuperados")
 		response["paises"] = modelos.PaisesCasosRecuperados
 		utils.Respond(w, response, 200)
 	}

@@ -22,7 +22,7 @@ var GetCasosConfirmados = func(w http.ResponseWriter, r *http.Request) {
 		response["paises"] = modelos.PaisesCasosConfirmados
 		utils.Respond(w, response, 200)
 	default:
-		response := utils.Message("Casos Default Confirmados")
+		response := utils.Message("Casos Confirmados")
 		response["paises"] = modelos.PaisesCasosConfirmados
 		utils.Respond(w, response, 200)
 
